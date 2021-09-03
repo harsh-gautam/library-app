@@ -11,9 +11,14 @@
   <body>
     <header id="header"><h1>My Library</h1></header>
     <main id="container">
-      <button class="new-book">
-        <a href="#"> New Book</a>
-      </button>
+      <div class="btn-group">
+        <button class="new-book">
+          <a href="#"> New Book</a>
+        </button>
+        <button>Sort by Title</button>
+        <button>Sort by Author</button>
+        <button>Sort by No. of Pages</button>
+      </div>
       <table class="books-table">
           <th>Title</th> 
           <th>Author</th> 
@@ -24,15 +29,15 @@
           <td>Harry Potter</td>
           <td>J K Rowling</td>
           <td>462</td>
-          <td><input type="checkbox" checked></td>
+          <td><input class="read-check" type="checkbox" checked></td>
           <td><button>Remove</button></td>
         </tr>
         <tr>
           <td>Harry Potter and the soccerr's stone</td>
           <td>J K Rowling</td>
           <td>462</td>
-          <td><input type="checkbox" value="read"></td>
-          <td><button>Remove</button></td>
+          <td><input class="read-check" type="checkbox" value="read"></td>
+          <td><button class="remove">Remove</button></td>
         </tr>
       </table>
     </main>
