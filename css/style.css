@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#header {
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#container {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.books-table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: cadetblue;
+  color: white;
+}
+
+th,
+td {
+  border-bottom: 2px solid #ddd;
+  padding: 18px;
+  text-align: left;
+}
+
+#footer {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

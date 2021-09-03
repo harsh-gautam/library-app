@@ -11,20 +11,27 @@
   <body>
     <header id="header"><h1>My Library</h1></header>
     <main id="container">
-      <button>New Book</button>
+      <button class="new-book">
+        <a href="#"> New Book</a>
+      </button>
       <table class="books-table">
-        <th class="table-heading">
-          <td>Title</td> 
-          <td>Author</td> 
-          <td>No. of Pages</td> 
-          <td>Read Status</td> 
-          <td></td> 
-        </th>
+          <th>Title</th> 
+          <th>Author</th> 
+          <th>No. of Pages</th> 
+          <th>Read Status</th> 
+          <th></th> 
         <tr>
           <td>Harry Potter</td>
           <td>J K Rowling</td>
           <td>462</td>
           <td><input type="checkbox" checked></td>
+          <td><button>Remove</button></td>
+        </tr>
+        <tr>
+          <td>Harry Potter and the soccerr's stone</td>
+          <td>J K Rowling</td>
+          <td>462</td>
+          <td><input type="checkbox" value="read"></td>
           <td><button>Remove</button></td>
         </tr>
       </table>
