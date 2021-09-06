@@ -2,9 +2,22 @@ function populateTable() {
   const booksData = JSON.parse(localStorage.getItem("data"));
   if (booksData === null) alert("Failed to retrieve books data");
   const table = document.querySelector(".books-table");
-  for(let book in booksData){
-    const trTag = createTag(book)
-    table.appendChild(trTag)
+  for (let book in booksData) {
+    const trTag = createTag(book);
+    table.appendChild(trTag);
   }
 }
- 
+
+function createTag(book) {
+  let tr = document.createElement("tr");
+  for (let key in book) {
+    let value = book[key];
+    if (key === "readStatus") value = book[key] ? "Completed" : "Not Read Yet";
+    let td = document.createElement("td");
+    td.textContent = value;
+    tr.appendChild(td);
+  }
+  return tr;
+}
+
+populateTable();
