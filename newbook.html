@@ -7,12 +7,12 @@
     <title>Add Book</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/newbook.css" />
-    <script src="js/newbook.js"></script>
+    <script defer src="js/newbook.js"></script>
   </head>
   <body>
     <header id="header"><h1>My Library</h1></header>
     <main id="container">
-      <form action="" method="post" class="form-group">
+      <form action="#" class="form-group">
         <legend class="form-title">Add a new book</legend>
         <label class="form-label" for="title">Title</label>
         <input
@@ -38,14 +38,14 @@
           name="pages"
           value=""
         />
-        <label class="form-label" for="read">Read?</label>
+        <label class="form-label">Read?</label>
         <div class="cb-group">
           <label class="form-label" for="read-yes">
             <input
               class="form-control checkbox"
               type="radio"
               id="read-yes"
-              name="read-status"
+              name="readstatus"
               value="yes"
             />Yes</label
           >
@@ -54,7 +54,7 @@
               class="form-control checkbox"
               type="radio"
               id="read-no"
-              name="read-status"
+              name="readstatus"
               value="no"
             />No</label
           >
