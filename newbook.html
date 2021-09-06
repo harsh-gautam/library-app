@@ -39,12 +39,27 @@
           value=""
         />
         <label class="form-label" for="read">Read?</label>
-        <input
-          class="form-control checkbox"
-          type="checkbox"
-          id="read"
-          name="read"
-        />
+        <div class="cb-group">
+          <label class="form-label" for="read-yes">
+            <input
+              class="form-control checkbox"
+              type="radio"
+              id="read-yes"
+              name="read-status"
+              value="yes"
+            />Yes</label
+          >
+          <label class="form-label" for="read-no">
+            <input
+              class="form-control checkbox"
+              type="radio"
+              id="read-no"
+              name="read-status"
+              value="no"
+            />No</label
+          >
+        </div>
+
         <input class="form-button" type="submit" id="submit" value="Submit" />
         <input class="form-button" type="button" id="cancel" value="Cancel" />
       </form>
