@@ -5,6 +5,7 @@ function populateTable() {
   const booksData = JSON.parse(localStorage.getItem("data"));
   if (booksData === null) alert("Failed to retrieve books data");
   const table = document.querySelector(".books-table > tbody");
+  table.innerHTML = "";
   for (let book in booksData) {
     const trTag = createTag(booksData[book]);
     table.appendChild(trTag);

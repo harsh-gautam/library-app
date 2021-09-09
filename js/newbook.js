@@ -16,6 +16,7 @@ form.addEventListener("submit", (e) => {
   e.target.author.value = "";
   e.target.pages.value = "";
   e.target.readstatus.value = "";
+  populateTable();
 });
 
 function saveData(book) {
