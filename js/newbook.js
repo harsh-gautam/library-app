@@ -32,5 +32,5 @@ function saveData(book) {
 }
 
 cancelBtn.addEventListener("click", () => {
-  window.location.assign("/");
+  modal.style.display = "none";
 });

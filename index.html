@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Library</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/newbook.css" />
     <script defer src="js/index.js"></script>
+    <script defer src="js/newbook.js"></script>
   </head>
   <body>
     <header id="header"><h1>My Library</h1></header>
     <main id="container">
       <div class="btn-group">
-        <button class="new-book">
-          <a href="newbook.html"> New Book</a>
-        </button>
-        <button>Sort by Title</button>
-        <button>Sort by Author</button>
-        <button>Sort by No. of Pages</button>
+        <button id="newbook" class="new-book">New Book</button>
+        <button class="sort">Sort by Title</button>
+        <button class="sort">Sort by Author</button>
+        <button class="sort">Sort by No. of Pages</button>
       </div>
       <table class="books-table">
         <thead>
@@ -29,9 +29,74 @@
         </thead>
         <tbody></tbody>
       </table>
+      <div id="newbook-modal" class="modal">
+        <div class="modal-content">
+          <form action="#" class="form-group">
+            <legend class="form-title">Add a new book</legend>
+            <label class="form-label" for="title">Title</label>
+            <input
+              class="form-control"
+              type="text"
+              id="title"
+              value=""
+              name="title"
+            />
+            <label class="form-label" for="author">Author</label>
+            <input
+              class="form-control"
+              type="text"
+              id="author"
+              name="author"
+              value=""
+            />
+            <label class="form-label" for="pages">No. of Pages</label>
+            <input
+              class="form-control"
+              type="number"
+              id="pages"
+              name="pages"
+              value=""
+            />
+            <label class="form-label">Read?</label>
+            <div class="cb-group">
+              <label class="form-label" for="read-yes">
+                <input
+                  class="form-control checkbox"
+                  type="radio"
+                  id="read-yes"
+                  name="readstatus"
+                  value="yes"
+                />Yes</label
+              >
+              <label class="form-label" for="read-no">
+                <input
+                  class="form-control checkbox"
+                  type="radio"
+                  id="read-no"
+                  name="readstatus"
+                  value="no"
+                />No</label
+              >
+            </div>
+
+            <input
+              class="form-button"
+              type="submit"
+              id="submit"
+              value="Submit"
+            />
+            <input
+              class="form-button"
+              type="button"
+              id="cancel"
+              value="Cancel"
+            />
+          </form>
+        </div>
+      </div>
     </main>
     <footer id="footer">
-      <p>Crafted by Harsh | <a href="#">source</a></p>
+      <p>Crafted by Harsh | <a href="#">Source</a></p>
     </footer>
   </body>
 </html>

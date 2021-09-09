@@ -7,6 +7,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
 button {
   cursor: pointer;
 }
@@ -26,6 +27,36 @@ button {
   align-items: center;
 }
 
+.btn-group {
+  width: 80%;
+  margin-bottom: 0.5rem;
+}
+
+.btn-group > button {
+  font-size: 1rem;
+  padding: 0.2rem 1rem;
+  background-color: #fff;
+}
+.sort {
+  border: 1px solid rgb(192, 136, 64);
+  color: rgb(192, 136, 64);
+}
+.sort:hover {
+  background-color: rgb(192, 136, 64);
+  color: white;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+.new-book {
+  border: 1px solid green;
+  color: green;
+}
+
+.new-book:hover {
+  background-color: green;
+  color: white;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+
 .books-table {
   width: 80%;
   border-collapse: collapse;
@@ -42,6 +73,18 @@ td {
   padding: 18px;
   text-align: left;
 }
+td > button {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  background-color: white;
+  border: 1px solid tomato;
+  color: tomato;
+}
+td > button:hover {
+  background-color: tomato;
+  color: white;
+  transition: all 0.2s ease-in-out 0.2s;
+}
 
 #footer {
   height: 10vh;
@@ -49,4 +92,9 @@ td {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+  color: red;
 }
