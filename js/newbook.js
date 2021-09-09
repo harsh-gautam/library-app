@@ -21,10 +21,12 @@ form.addEventListener("submit", (e) => {
 function saveData(book) {
   let data = localStorage.getItem("data");
   if (data === null) {
+    book["id"] = 0;
     localStorage.setItem("data", JSON.stringify([book]));
     return;
   }
   data = JSON.parse(data);
+  book["id"] = data.length;
   data.push(book);
   localStorage.setItem("data", JSON.stringify(data));
 }
