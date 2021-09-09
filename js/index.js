@@ -37,6 +37,13 @@ function createTag(book) {
 removeBookBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const parentTr = e.target.parentNode.parentNode;
-    console.log(parentTr);
+    const id = parentTr.id;
+    parentTr.remove();
+    const originalData = JSON.parse(localStorage.getItem("data"));
+    let newData = [...originalData];
+    newData = newData.filter((book) => {
+      if (book["id"] !== Number(id)) return book;
+    });
+    localStorage.setItem("data", JSON.stringify(newData));
   });
 });
