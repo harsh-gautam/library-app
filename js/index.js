@@ -3,7 +3,7 @@ function populateTable() {
   if (booksData === null) alert("Failed to retrieve books data");
   const table = document.querySelector(".books-table > tbody");
   for (let book in booksData) {
-    const trTag = createTag(book);
+    const trTag = createTag(booksData[book]);
     table.appendChild(trTag);
   }
 }
