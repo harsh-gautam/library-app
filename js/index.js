@@ -17,6 +17,12 @@ function createTag(book) {
     td.textContent = value;
     tr.appendChild(td);
   }
+  let removeTd = document.createElement("td");
+  let removeBtn = document.createElement("button");
+  removeBtn.value = "remove";
+  removeBtn.textContent = "Remove";
+  removeTd.appendChild(removeBtn);
+  tr.appendChild(removeTd);
   return tr;
 }
 
