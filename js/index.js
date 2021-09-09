@@ -47,3 +47,5 @@ removeBookBtn.forEach((btn) => {
     localStorage.setItem("data", JSON.stringify(newData));
   });
 });
+
+// TODO: Implement Sorting function
