@@ -1,4 +1,5 @@
 const form = document.querySelector(".form-group");
+const cancelBtn = document.querySelector("#cancel");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -27,3 +28,7 @@ function saveData(book) {
   data.push(book);
   localStorage.setItem("data", JSON.stringify(data));
 }
+
+cancelBtn.addEventListener("click", () => {
+  window.location.assign("/");
+});
