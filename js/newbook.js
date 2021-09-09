@@ -1,5 +1,6 @@
 const form = document.querySelector(".form-group");
 const cancelBtn = document.querySelector("#cancel");
+const notification = document.querySelector(".notification");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -9,7 +10,10 @@ form.addEventListener("submit", (e) => {
   const pages = e.target.pages.value;
   const readStatus = e.target.readstatus.value === "yes" ? true : false;
   saveData({ title, author, pages, readStatus });
-  alert("Book saved to library!");
+  notification.textContent = "Book saved to library!";
+  setTimeout(() => {
+    notification.textContent = "";
+  }, 2500);
 
   // clear form inputs after adding book to database
   e.target.title.value = "";
