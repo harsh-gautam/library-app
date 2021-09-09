@@ -1,8 +1,8 @@
-populateTable();
+const originalData = JSON.parse(localStorage.getItem("data"));
+populateTable(originalData);
 const removeBookBtn = document.querySelectorAll(".remove-book");
 
-function populateTable() {
-  const booksData = JSON.parse(localStorage.getItem("data"));
+function populateTable(booksData) {
   if (booksData === null) alert("Failed to retrieve books data");
   const table = document.querySelector(".books-table > tbody");
   table.innerHTML = "";
@@ -30,24 +30,27 @@ function createTag(book) {
   removeBtn.value = "remove";
   removeBtn.classList.add("remove-book");
   removeBtn.textContent = "Remove";
+  removeBtn.addEventListener("click", handleRemove);
   removeTd.appendChild(removeBtn);
   tr.appendChild(removeTd);
   return tr;
 }
 
 removeBookBtn.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const parentTr = e.target.parentNode.parentNode;
-    const id = parentTr.id;
-    parentTr.remove();
-    const originalData = JSON.parse(localStorage.getItem("data"));
-    let newData = [...originalData];
-    newData = newData.filter((book) => {
-      if (book["id"] !== Number(id)) return book;
-    });
-    localStorage.setItem("data", JSON.stringify(newData));
-  });
+  btn.addEventListener("click", handleRemove);
 });
+
+function handleRemove(e) {
+  const parentTr = e.target.parentNode.parentNode;
+  const id = parentTr.id;
+  parentTr.remove();
+  const originalData = JSON.parse(localStorage.getItem("data"));
+  let newData = [...originalData];
+  newData = newData.filter((book) => {
+    if (book["id"] !== Number(id)) return book;
+  });
+  localStorage.setItem("data", JSON.stringify(newData));
+}
 
 const modal = document.querySelector("#newbook-modal");
 const modalTrigger = document.querySelector("#newbook");

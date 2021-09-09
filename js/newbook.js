@@ -16,7 +16,6 @@ form.addEventListener("submit", (e) => {
   e.target.author.value = "";
   e.target.pages.value = "";
   e.target.readstatus.value = "";
-  populateTable();
 });
 
 function saveData(book) {
@@ -30,6 +29,7 @@ function saveData(book) {
   book["id"] = data.length;
   data.push(book);
   localStorage.setItem("data", JSON.stringify(data));
+  populateTable(data);
 }
 
 cancelBtn.addEventListener("click", () => {
