@@ -9,7 +9,12 @@ form.addEventListener("submit", (e) => {
   const readStatus = e.target.readstatus.value === "yes" ? true : false;
   saveData({ title, author, pages, readStatus });
   alert("Book saved to library!");
-  // TODO: clear form inputs
+
+  // clear form inputs after adding book to database
+  e.target.title.value = "";
+  e.target.author.value = "";
+  e.target.pages.value = "";
+  e.target.readstatus.value = "";
 });
 
 function saveData(book) {
