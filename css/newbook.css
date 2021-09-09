@@ -19,6 +19,15 @@
   width: 30%; /* Could be more or less, depending on screen size */
 }
 
+.notification {
+  display: block;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: rgb(62, 146, 56);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
 .form-group {
   position: relative;
   display: flex;
@@ -31,7 +40,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   align-self: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .form-label {
