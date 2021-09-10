@@ -86,6 +86,24 @@ td > button:hover {
   transition: all 0.2s ease-in-out 0.2s;
 }
 
+.completed {
+  width: 8rem;
+  background-color: rgb(60, 105, 209);
+  color: white;
+  border: 1px solid rgb(60, 105, 209);
+}
+
+.completed:hover {
+  background-color: rgb(60, 105, 209);
+}
+
+.not-completed {
+  width: 8rem;
+  background-color: rgb(184, 184, 184);
+  border: 1px solid rgb(184, 184, 184);
+  color: white;
+}
+
 #footer {
   height: 10vh;
   display: flex;

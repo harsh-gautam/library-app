@@ -20,14 +20,22 @@ function createTag(book) {
       continue;
     }
     let value = book[key];
-    if (key === "readStatus") value = book[key] ? "Completed" : "Not Read Yet";
     let td = document.createElement("td");
     td.textContent = value;
+
+    if (key === "readStatus") {
+      let readBtn = document.createElement("button");
+      readBtn.classList.add(book[key] ? "completed" : "not-completed");
+      readBtn.textContent = book[key] ? "Completed" : "Not Completed";
+      readBtn.addEventListener("click", handleRead);
+      td.textContent = "";
+      td.appendChild(readBtn);
+    }
+
     tr.appendChild(td);
   }
   let removeTd = document.createElement("td");
   let removeBtn = document.createElement("button");
-  removeBtn.value = "remove";
   removeBtn.classList.add("remove-book");
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", handleRemove);
@@ -51,6 +59,8 @@ function handleRemove(e) {
   });
   localStorage.setItem("data", JSON.stringify(newData));
 }
+
+function handleRead(e) {}
 
 const modal = document.querySelector("#newbook-modal");
 const modalTrigger = document.querySelector("#newbook");
