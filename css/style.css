@@ -9,6 +9,8 @@ a {
 }
 
 button {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
   cursor: pointer;
 }
 
@@ -73,21 +75,21 @@ td {
   padding: 18px;
   text-align: left;
 }
-td > button {
+.remove-book {
   font-size: 0.9rem;
   padding: 0.3rem 0.8rem;
   background-color: white;
   border: 1px solid tomato;
   color: tomato;
 }
-td > button:hover {
+.remove-book:hover {
   background-color: tomato;
   color: white;
   transition: all 0.2s ease-in-out 0.2s;
 }
 
 .completed {
-  width: 8rem;
+  width: 7rem;
   background-color: rgb(60, 105, 209);
   color: white;
   border: 1px solid rgb(60, 105, 209);
@@ -98,7 +100,7 @@ td > button:hover {
 }
 
 .not-completed {
-  width: 8rem;
+  width: 7rem;
   background-color: rgb(184, 184, 184);
   border: 1px solid rgb(184, 184, 184);
   color: white;

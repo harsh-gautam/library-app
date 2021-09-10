@@ -26,7 +26,8 @@ function createTag(book) {
     if (key === "readStatus") {
       let readBtn = document.createElement("button");
       readBtn.classList.add(book[key] ? "completed" : "not-completed");
-      readBtn.textContent = book[key] ? "Completed" : "Not Completed";
+      readBtn.textContent = book[key] ? "Completed" : "Completed?";
+      readBtn.value = book[key] ? "c" : "nc";
       readBtn.addEventListener("click", handleRead);
       td.textContent = "";
       td.appendChild(readBtn);
@@ -60,7 +61,19 @@ function handleRemove(e) {
   localStorage.setItem("data", JSON.stringify(newData));
 }
 
-function handleRead(e) {}
+function handleRead(e) {
+  if (e.target.value === "c") {
+    e.target.classList.remove("completed");
+    e.target.classList.add("not-completed");
+    e.target.value = "nc";
+    e.target.textContent = "Completed?";
+  } else {
+    e.target.classList.add("completed");
+    e.target.classList.remove("not-completed");
+    e.target.value = "c";
+    e.target.textContent = "Completed";
+  }
+}
 
 const modal = document.querySelector("#newbook-modal");
 const modalTrigger = document.querySelector("#newbook");
