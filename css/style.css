@@ -11,6 +11,9 @@ a {
 button {
   font-size: 0.9rem;
   padding: 0.3rem 0.8rem;
+  background-color: rgb(184, 184, 184);
+  border: 1px solid rgb(184, 184, 184);
+  color: white;
   cursor: pointer;
 }
 
@@ -89,7 +92,6 @@ td {
 }
 
 .completed {
-  width: 7rem;
   background-color: rgb(60, 105, 209);
   color: white;
   border: 1px solid rgb(60, 105, 209);
@@ -97,13 +99,6 @@ td {
 
 .completed:hover {
   background-color: rgb(60, 105, 209);
-}
-
-.not-completed {
-  width: 7rem;
-  background-color: rgb(184, 184, 184);
-  border: 1px solid rgb(184, 184, 184);
-  color: white;
 }
 
 #footer {

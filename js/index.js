@@ -3,7 +3,7 @@ populateTable(originalData);
 const removeBookBtn = document.querySelectorAll(".remove-book");
 
 function populateTable(booksData) {
-  if (booksData === null) alert("Failed to retrieve books data");
+  if (booksData === null) return;
   const table = document.querySelector(".books-table > tbody");
   table.innerHTML = "";
   for (let book in booksData) {
@@ -62,17 +62,25 @@ function handleRemove(e) {
 }
 
 function handleRead(e) {
-  if (e.target.value === "c") {
-    e.target.classList.remove("completed");
-    e.target.classList.add("not-completed");
-    e.target.value = "nc";
+  const id = e.target.parentNode.parentNode.id;
+  let newData = [...originalData];
+  if (e.target.textContent === "Completed") {
+    e.target.classList.toggle("completed");
     e.target.textContent = "Completed?";
+    newData = newData.map((book) => {
+      if (book.id == id) book.readStatus = false;
+      return book;
+    });
   } else {
-    e.target.classList.add("completed");
-    e.target.classList.remove("not-completed");
-    e.target.value = "c";
+    e.target.classList.toggle("completed");
     e.target.textContent = "Completed";
+    newData = newData.map((book) => {
+      if (book.id == id) book.readStatus = true;
+      return book;
+    });
   }
+  console.log(newData);
+  localStorage.setItem("data", JSON.stringify(newData));
 }
 
 const modal = document.querySelector("#newbook-modal");
