@@ -2,6 +2,19 @@ const form = document.querySelector(".form-group");
 const cancelBtn = document.querySelector("#cancel");
 const notification = document.querySelector(".notification");
 
+class Book {
+  constructor(title, author, pages, readStatus) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
+
+  setId(id) {
+    this.id = id;
+  }
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   // console.log(e.target.title.value);
@@ -9,7 +22,8 @@ form.addEventListener("submit", (e) => {
   const author = e.target.author.value;
   const pages = e.target.pages.value;
   const readStatus = e.target.readstatus.value === "yes" ? true : false;
-  saveData({ title, author, pages, readStatus });
+  const book = new Book(title, author, pages, readStatus);
+  saveData(book);
   notification.textContent = "Book saved to library!";
   setTimeout(() => {
     notification.textContent = "";
@@ -25,13 +39,15 @@ form.addEventListener("submit", (e) => {
 function saveData(book) {
   let data = localStorage.getItem("data");
   if (data === null) {
-    book["id"] = 0;
+    book.setId(0);
     localStorage.setItem("data", JSON.stringify([book]));
     return;
   }
   data = JSON.parse(data);
-  book["id"] = data.length;
+  book.setId(data.length);
   data.push(book);
+  console.log(data);
+  console.log(book);
   localStorage.setItem("data", JSON.stringify(data));
   populateTable(data);
 }
