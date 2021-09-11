@@ -76,9 +76,12 @@ button {
 .info-span {
   font-weight: normal;
 }
-
-.books-table {
+.table-wrapper {
   width: 80%;
+  overflow: auto;
+}
+.books-table {
+  width: 100%;
   border-collapse: collapse;
 }
 
