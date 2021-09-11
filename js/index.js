@@ -60,6 +60,7 @@ function handleRemove(e) {
     if (book["id"] !== Number(id)) return book;
   });
   localStorage.setItem("data", JSON.stringify(newData));
+  showInfo();
 }
 
 function handleRead(e) {
