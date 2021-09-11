@@ -97,3 +97,33 @@ window.onclick = function (event) {
 };
 
 // TODO: Implement Sorting function
+const sortTitleBtn = document.querySelector(".sort-title");
+const sortAuthorBtn = document.querySelector(".sort-author");
+const sortPagesBtn = document.querySelector(".sort-pages");
+
+sortTitleBtn.addEventListener("click", () => {
+  const sortedData = [...JSON.parse(localStorage.getItem("data"))];
+  sortedData.sort((curr, next) => {
+    if (curr.title > next.title) return 1;
+    else return -1;
+  });
+  populateTable(sortedData);
+});
+
+sortAuthorBtn.addEventListener("click", () => {
+  const sortedData = [...JSON.parse(localStorage.getItem("data"))];
+  sortedData.sort((curr, next) => {
+    if (curr.author > next.author) return 1;
+    else return -1;
+  });
+  populateTable(sortedData);
+});
+
+sortPagesBtn.addEventListener("click", () => {
+  const sortedData = [...JSON.parse(localStorage.getItem("data"))];
+  sortedData.sort((curr, next) => {
+    if (Number(curr.pages) > Number(next.pages)) return 1;
+    else return -1;
+  });
+  populateTable(sortedData);
+});
