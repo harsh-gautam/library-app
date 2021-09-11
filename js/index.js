@@ -10,6 +10,7 @@ function populateTable(booksData) {
     const trTag = createTag(booksData[book]);
     table.appendChild(trTag);
   }
+  showInfo();
 }
 
 function createTag(book) {
@@ -79,8 +80,18 @@ function handleRead(e) {
       return book;
     });
   }
-  console.log(newData);
   localStorage.setItem("data", JSON.stringify(newData));
+  showInfo();
+}
+
+function showInfo() {
+  const total = document.querySelector(".total");
+  const booksRead = document.querySelector(".books-read");
+  const booksUnread = document.querySelector(".books-unread");
+  const data = [...JSON.parse(localStorage.getItem("data"))];
+  total.textContent = data.length;
+  booksRead.textContent = data.filter((book) => book.readStatus).length;
+  booksUnread.textContent = data.filter((book) => !book.readStatus).length;
 }
 
 const modal = document.querySelector("#newbook-modal");

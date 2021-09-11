@@ -62,6 +62,21 @@ button {
   transition: all 0.2s ease-in-out 0.2s;
 }
 
+.info {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+.info p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 2%;
+}
+
+.info-span {
+  font-weight: normal;
+}
+
 .books-table {
   width: 80%;
   border-collapse: collapse;
